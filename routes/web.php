@@ -20,3 +20,11 @@ Route::middleware('guest')->group(function () {
 
 Route::get('/register', [App\Http\Controllers\Auth\AuthController::class, 'index_register'])->name('register');
 Route::post('/register', [App\Http\Controllers\Auth\AuthController::class, 'register'])->name('auths.register');
+
+Route::group(['middleware' => ['auth', 'admin']], function () {
+    Route::get('/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('auths.logout');
+});
+
+Route::group(['middleware' => ['auth', 'user']], function () {
+    Route::get('/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('auths.logout');
+});
