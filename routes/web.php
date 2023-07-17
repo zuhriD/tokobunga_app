@@ -14,14 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('guest')->group(function () {
-    Route::get('/', function () {
-        return view('layouts.base');
-    });
-    Route::get('/login', [App\Http\Controllers\Auth\AuthController::class, 'index'])->name('login');
+    Route::get('/login', [App\Http\Controllers\Auth\AuthController::class, 'index_login'])->name('login');
     Route::post('/login', [App\Http\Controllers\Auth\AuthController::class, 'login'])->name('auths.login');
 });
 
 Route::get('/register', [App\Http\Controllers\Auth\AuthController::class, 'index_register'])->name('register');
-Route::post('/register', [App\Http\Controllers\Auth\AuthController::class, 'register']);
-
-
+Route::post('/register', [App\Http\Controllers\Auth\AuthController::class, 'register'])->name('auths.register');
