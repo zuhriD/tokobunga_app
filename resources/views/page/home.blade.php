@@ -104,5 +104,36 @@
       </div>
     </div>
   </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Block for map -->
+        <div id="map" style="height: 400px;"></div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <!-- Block for contact details -->
+        <h3 class="text-center" style="font-family: 'Jacques Francois', sans-serif;">WHERE TO FIND US</h3>
+        <hr style="border-top: 1px solid black;">
+        <p class="manjari-font">LA FLOR AMOR SURABAYA</p>
+        <p class="jacques-font mb-3">Jl. Ketintang, Surabaya, Indonesia</p>
+        <p class="jacques-font " style="margin-top: 0;
+    margin-bottom: 0;">flor.amor@gmail.com</p>
+        <p class="jacques-font " style="margin-top: 0;
+    margin-bottom: 0;">w: 08123456789</p>
+        <p class="jacques-font " style="margin-top: 0;
+    margin-bottom: 0;">w: 08123456789</p>
+        <p class="jacques-font " style="margin-top: 0;
+    margin-bottom: 0;">w: 08123456789</p>
+        <p class="jacques-font " style="margin-top: 0;
+    margin-bottom: 0;">w: 08123456789</p>
+        <p class="manjari-font mt-4 mb-0">OPENING HOURS:</p>
+        <p class="jacques-font " style="margin-top: 0;
+        margin-bottom: 0;">Sun - Fri, 8am - 10pm</p>
+        <p class="jacques-font " style="margin-top: 0;
+        margin-bottom: 0;">Sat, 8am - 9pm</p>
+      </div>
+    </div>
+  </div>
+  
   
 @endsection

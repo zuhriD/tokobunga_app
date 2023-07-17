@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Manjari&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mallanna&display=swap');
+
+
+  .manjari-font {
+    font-family: 'Manjari', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  /* make jacques font */
+    .jacques-font {
+        font-family: 'Jacques Francois', sans-serif;
+        font-size: 20px;
+    }
+
 .container-na {
   text-align: center;
   margin-top: 10px;
@@ -36,4 +52,42 @@
 
   .carousel {
     width: 100%;
+  }
+
+  .footer {
+    background-color: pink;
+    width: 100%;
+    padding: 30px 0;
+    color: white;
+  }
+
+  .footer-block {
+    margin-bottom: 20px;
+  }
+  .footer-block ul {
+    list-style-type: none; /* Menghapus dekorasi bulatan */
+    padding: 0; /* Menghilangkan padding bawaan */
+  }
+
+  .footer-block ul li {
+    color: black; /* Mengubah warna font menjadi hitam */
+    font-family: 'Jacques Francois', sans-serif;
+    font-size: 20px;
+  }
+  .footer-block p {
+    color: black; /* Mengubah warna teks menjadi hitam */
+    font-family: 'Jacques Francois', sans-serif;
+    font-size: 20px;
+  }
+
+  .footer-block p i {
+    color: black; /* Mengubah warna ikon menjadi hitam */
+    margin-right: 10px; /* Memberikan jarak kanan antara ikon dan teks */
+    
+  }
+
+  .mallana-font {
+    font-family: 'Mallanna', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
   }
