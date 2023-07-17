@@ -15,7 +15,6 @@
 
     @include('layouts.navbar')
 
-    @include('layouts.carosel')
 
     @yield('content')
 
