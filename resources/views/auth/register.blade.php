@@ -33,12 +33,10 @@
                     <p class="mb-0" style="color: grey">Already a member? <a href="#" class="text-black">Login</a></p>
                   </div>
                 </form>
-              </div>   
-                                      
+              </div>                                         
            </div>
         </div>
       </div>
-      
     </div>
   </div>
 @endsection
