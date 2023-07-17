@@ -19,7 +19,7 @@
    <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
-  
+
   {{-- Jquery --}}
   <script src="{{ asset('js/code.jquery.com_jquery-3.6.0.min.js') }}"></script>
 </head>
@@ -52,10 +52,10 @@
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong> Toko Bunga App.</strong>
-    All rights reserved.
+    <strong> Flor Amor.</strong>
+    All Rights Reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.1.0
+      <b>Version</b> 1.0.0
     </div>
   </footer>
 </div>
@@ -86,7 +86,7 @@
 <script src="{{  asset('js/style.js')}}"></script>
 <script>
      $(function () {
-   
+
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": false,

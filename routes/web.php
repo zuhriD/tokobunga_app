@@ -14,10 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('guest')->group(function () {
-    Route::get('/', function () {
-        return view('dashboard.layouts.base');
-    });
-    Route::get('/login', [App\Http\Controllers\Auth\AuthController::class, 'index_login'])->name('login');
+    Route::get('/', [App\Http\Controllers\Auth\AuthController::class, 'index_login'])->name('login');
     Route::post('/login', [App\Http\Controllers\Auth\AuthController::class, 'login'])->name('auths.login');
 });
 
@@ -25,6 +22,8 @@ Route::get('/register', [App\Http\Controllers\Auth\AuthController::class, 'index
 Route::post('/register', [App\Http\Controllers\Auth\AuthController::class, 'register'])->name('auths.register');
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
+    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboardAdmin');
+    Route::resource('users', App\Http\Controllers\UserController::class);
     Route::get('/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('auths.logout');
 });
 
