@@ -25,6 +25,3 @@ body {
   height: 50px;
   padding-left: 30px; /* Adjust the value as needed */
 }
-.login-box input[type="text"]::placeholder,
-.login-box input[type="password"]::placeholder {
-}
