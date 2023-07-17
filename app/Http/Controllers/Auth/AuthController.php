@@ -25,6 +25,7 @@ class AuthController extends Controller
             'username' => 'required|string|max:255',
             'email' => 'required|string|max:255|unique:users|email',
             'password' => 'required|string|confirmed',
+            'role_id' => 'required|integer'
         ]);
 
         $credentials['password'] = bcrypt($request->password);
@@ -36,7 +37,7 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $loginField = $request->input('email');
+        $loginField = $request->input('identifier');
         $loginType = filter_var($loginField, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
         $credentials = [
@@ -44,17 +45,19 @@ class AuthController extends Controller
             'password' => $request->input('password')
         ];
 
-        $attempt = Auth::attempt($credentials);
+        if (Auth::attempt($credentials, $request->input('remember'))) {
+            $request->session()->regenerate();
 
-        if ($attempt && Auth::user()->role_id == 1) {
-            $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
-        } else if ($attempt && Auth::user()->role_id == 2) {
-            $request->session()->regenerate();
-            return redirect()->intended('/home');
+            $user = Auth::user();
+
+            if ($user->role_id == 1) {
+                return redirect()->intended('/dashboard');
+            } else if ($user->role_id == 2) {
+                return redirect()->intended('/home');
+            }
         }
 
-        return back()->with('error', 'Login failed!');
+        return redirect()->back()->withInput()->withErrors(['identifier' => 'Invalid login credentials.']);
     }
 
     public function logout(Request $request)
