@@ -28,9 +28,7 @@
             </form>
         </div>
     </div>
-    
-    
 </div>
-<h3 class="text-center" style="font-family: 'Josefin Sans', sans-serif;color:#6D6C6C">@FLORAMOR</h3>
+<h3 class="text-center josefin-font" style="color:#6D6C6C;font-weight: 400;">@FLORAMOR</h3>
 
 @endsection
