@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('guest')->group(function () {
-    Route::get('/', [App\Http\Controllers\Auth\AuthController::class, 'index_login'])->name('login');
+    Route::get('/login', [App\Http\Controllers\Auth\AuthController::class, 'index_login'])->name('login');
     Route::post('/login', [App\Http\Controllers\Auth\AuthController::class, 'login'])->name('auths.login');
 });
 
@@ -24,9 +24,11 @@ Route::post('/register', [App\Http\Controllers\Auth\AuthController::class, 'regi
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboardAdmin');
     Route::resource('users', App\Http\Controllers\UserController::class);
-    Route::get('/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('auths.logout');
+    Route::resource('categories', App\Http\Controllers\CategoryController::class);
+    Route::post('/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('auths.logout');
 });
 
 Route::group(['middleware' => ['auth', 'user']], function () {
-    Route::get('/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('auths.logout');
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('homeUser');
+    Route::post('/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('auths.logout');
 });

@@ -8,19 +8,20 @@ use Illuminate\Support\Facades\Redirect;
 
 class CategoryController extends Controller
 {
-    public function index_category()
+    public function index()
     {
         $categories = Category::all();
 
-        return view('categories.index', compact('categories'));
+        return view('dashboard.kategori.index', compact('categories'));
     }
 
-    public function create_category()
+    public function show($id)
     {
-        return view('categories.create');
+        $category = Category::findOrFail($id); // Query ke database untuk mengambil data sesuai id
+        return response()->json($category);
     }
 
-    public function store_category(Request $request)
+    public function store(Request $request)
     {
         $validatedData = $request->validate([
             'name' => 'required|unique:categories|max:255',
@@ -31,12 +32,7 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')->with('success', 'Category created successfully.');
     }
 
-    public function edit_category(Category $category)
-    {
-        return view('categories.edit', compact('category'));
-    }
-
-    public function update_category(Request $request, Category $category)
+    public function update(Request $request, Category $category)
     {
         $validatedData = $request->validate([
             'name' => 'required|unique:categories|max:255',
@@ -47,7 +43,7 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')->with('success', 'Category updated successfully.');
     }
 
-    public function destroy_category(Category $category)
+    public function destroy(Category $category)
     {
         $category->delete();
 
