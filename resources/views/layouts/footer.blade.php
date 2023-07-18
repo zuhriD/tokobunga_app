@@ -1,26 +1,28 @@
-<div class="container mt-5">
-    <div class="row">
-      <div class="col-md-6">
-        <!-- Block for map -->
-        <div id="map"></div>
-      </div>
-      <div class="col-md-6">
-        <!-- Block for contact details -->
-        <h3 class="text-center" style="font-family: 'Jacques Francois', sans-serif;">WHERE TO FIND US</h3>
-        <hr style="border-top: 1px solid black;">
-        <p>LA FLOR AMOR SURABAYA</p>
-        <p>Email: flor.amor@gmail.com</p>
-        <p>WhatsApp:</p>
-        <ul>
-          <li>088102673927</li>
-          <li>088152678397</li>
-          <li>088178962345</li>
-          <li>088190876453</li>
-        </ul>
-        <p>OPENING HOURS:</p>
-        <p>Sun - Fri, 8am - 10pm</p>
-        <p>Sat, 8am - 9pm</p>
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 footer-block">
+          <h4 class="mallana-font">USEFUL LINKS</h4>
+          <ul>
+            <li><a href="#" class="text-decoration-none text-black">Contact Us</a></li>
+            <li><a href="#" class="text-decoration-none text-black">Featured On</a></li>
+            <li><a href="#" class="text-decoration-none text-black">Delivery Information</a></li>
+            <li><a href="#" class="text-decoration-none text-black">Terms & Conditions</a></li>
+            <li><a href="#" class="text-decoration-none text-black">Privacy Policy</a></li>
+            <li><a href="#" class="text-decoration-none text-black">My Account</a></li>
+          </ul>                  
+        </div>
+        <div class="col-md-4 footer-block">
+          <h4 class="mallana-font">CONTACT US</h4>
+          <p><i class="fas fa-phone"></i> 0881-8725-7763</p>
+          <p><i class="fas fa-envelope"></i> floramor@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Jl. Ketintang, Surabaya, Indonesia</p>
+        </div>
+        <div class="col-md-4 footer-block">
+          <h4 class="mallana-font">PAYMENT</h4>
+          <p><img src="{{ asset('assets/cod.png') }}" alt="cod"></p>
+          <p style="font-size: 12px;"> @FLOR AMOR</p>
+        </div>
       </div>
     </div>
-  </div>
-  
+  </footer>

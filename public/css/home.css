@@ -1,10 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Manjari&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mallanna&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+@import url('https://www.dafontfree.net/embed/bXlhbm1hci1raHlheS1yZWd1bGFyJmRhdGEvNDI2L20vMTc5NzQ5L0toeWF5LVJlZ3VsYXIudHRm');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+/* make quicksand */
+.quicksand-font {
+    font-family: 'Quicksand', sans-serif;
+  }
+
+.myanmar-font{
+    font-family:"myanmar-khyay-regular", sans-serif;
+}
+
+.passion-font {
+    font-family: 'Passion One', cursive;
+  }
+
+.montserrat-font{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.josefin-font {
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .manjari-font {
+    font-family: 'Manjari', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  /* make jacques font */
+    .jacques-font {
+        font-family: 'Jacques Francois', sans-serif;
+        font-size: 20px;
+    }
+
 .container-na {
   text-align: center;
-  margin-top: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
+  background-color: white;
   max-width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -36,4 +77,64 @@
 
   .carousel {
     width: 100%;
+  }
+
+  .footer {
+    background-color: pink;
+    width: 100%;
+    padding: 30px 0;
+    color: white;
+  }
+
+  .footer-block {
+    margin-bottom: 20px;
+  }
+  .footer-block ul {
+    list-style-type: none; /* Menghapus dekorasi bulatan */
+    padding: 0; /* Menghilangkan padding bawaan */
+  }
+
+  .footer-block ul li {
+    color: black; /* Mengubah warna font menjadi hitam */
+    font-family: 'Jacques Francois', sans-serif;
+    font-size: 20px;
+  }
+  .footer-block p {
+    color: black; /* Mengubah warna teks menjadi hitam */
+    font-family: 'Jacques Francois', sans-serif;
+    font-size: 20px;
+  }
+
+  .footer-block p i {
+    color: black; /* Mengubah warna ikon menjadi hitam */
+    margin-right: 10px; /* Memberikan jarak kanan antara ikon dan teks */
+    
+  }
+
+  .mallana-font {
+    font-family: 'Mallanna', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  .carousel-image {
+    width: 100%;
+    height: 800px; /* Adjust the desired height */
+    object-fit: cover;
+  }
+
+  .product-box {
+    background-color: #FFFFFF;
+    border: 1px solid #FECECEEC;
+    border-radius: 15px;
+    padding: 10px;
+  }
+  
+  .product-box img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+  }
+  
+  .product-box h5, .product-box p {
+    margin: 0;
   }
