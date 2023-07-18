@@ -6,7 +6,8 @@
 
 @section('content')
 
-<div class="container mb-5" style="margin-top: 230px">
+<img src="{{ asset('assets/profile/banner.png') }}" alt="Banner Image" class="img-fluid" style="margin-top: 200px">
+<div class="container mb-5 mt-5" >
     <h1 class="text-center" style="font-family: 'Malgun Gothic', sans-serif;font-weight: 700;">My Profile</h1>
 
     <div class="row justify-content-center">
