@@ -2,89 +2,70 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 class ProductController extends Controller
 {
-    public function index_product()
+    public function index()
     {
         $products = Product::all();
-        return view('index_product', compact('products'));
+        $categories = Category::all();
+        return view('dashboard.produk.index', compact('products', 'categories'));
     }
 
-    public function show_product(Product $product)
+    public function show($id)
     {
-        return view('show_product', compact('product'));
+        $product = Product::findOrFail($id); // Query ke database untuk mengambil data sesuai id
+        return response()->json($product);
     }
 
-    public function create_product()
-    {
-        return view('create_product');
-    }
-
-    public function edit_product(Product $product)
-    {
-        return view('edit_product', compact('product'));
-    }
-
-    public function store_product(Request $request)
+    public function store(Request $request)
     {
         $validatedData = $request->validate([
             'name' => 'required',
             'price' => 'required',
             'description' => 'required',
-            'image' => 'required|image|file|max:1024',
+            'image' => 'required|image',
+            'category_id' => 'required',
         ]);
 
-        if ($request->file('image')) {
-            $validatedData['image'] = time() . ".png";
-            $request->file('image')->move(public_path('assets/img'), $validatedData['image']);
-            Product::create($validatedData);
-        }
+        $validatedData['image'] = time() . ".png";
+        $request->file('image')->move(public_path('assets/img'), $validatedData['image']);
+        $product = Product::create($validatedData);
 
-        return Redirect::route('index_product');
+        return redirect()->route('products.index')->with('success', 'Product created successfully.');
     }
 
-    public function update_product(Product $product, Request $request)
-    {
-        $validatedData = $request->validate([
-            'name' => 'required',
-            'price' => 'required',
-            'description' => 'required',
-            'image' => 'required|image|file|max:1024',
-        ]);
+    public function update(Product $product, Request $request)
+{
+    $validatedData = $request->validate([
+        'name' => 'required',
+        'price' => 'required',
+        'description' => 'required',
+        'image' => 'required|image',
+        'category_id' => 'required',
+    ]);
 
-        $product = Product::find($request->id);
-
-        //Check if product is found
-        if ($product) {
-
-            //Check if has image
-            if ($request->file('image')) {
-
-                // Delete old image
-                $img_path = public_path() . '/assets/img' . $product->image;
-                unlink($img_path); // Delete image
-
-                // Upload new image
-                $validatedData['image'] = time() . ".png";
-                $request->file('image')->move(public_path('assets/img'), $validatedData['image']);
-                $product->update($validatedData);
-                return ['status' => 'success', 'message' => 'Image updated successfully'];
-            } else {
-                $product->update($validatedData);
-                return ['status' => 'success', 'message' => 'Image updated successfully'];
-            }
-        } else {
-            return ['status' => 'error', 'message' => 'Image not found'];
-        }
+    // Delete old image
+    if ($request->file('image')) {
+        $img_path = public_path() . '/assets/img/' . $product->image;
+        unlink($img_path); // Delete image
     }
 
-    public function delete_product(Product $product)
+    $validatedData['image'] = time() . ".png";
+    $request->file('image')->move(public_path('assets/img'), $validatedData['image']);
+
+    $product->update($validatedData);
+
+    return Redirect::route('products.index')->with('success', 'Product updated successfully.');
+}
+
+    public function destroy(Product $product)
     {
         $product->delete();
-        return Redirect::route('index_product');
+        return Redirect::route('products.index')->with('success', 'Product deleted successfully.');
     }
 }

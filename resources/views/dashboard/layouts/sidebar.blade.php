@@ -18,7 +18,7 @@
                     <a href="{{ route('dashboardAdmin') }}" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
-                            Users
+                            User
                         </p>
                     </a>
                 </li>
@@ -27,6 +27,14 @@
                         <i class="nav-icon fas fa-bars"></i>
                         <p>
                             Category
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('products.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-spa"></i>
+                        <p>
+                            Product
                         </p>
                     </a>
                 </li>
