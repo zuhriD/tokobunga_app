@@ -6,9 +6,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
 @import url('https://www.dafontfree.net/embed/bXlhbm1hci1raHlheS1yZWd1bGFyJmRhdGEvNDI2L20vMTc5NzQ5L0toeWF5LVJlZ3VsYXIudHRm');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 
-
-/* make myanmar font */
+/* make quicksand */
+.quicksand-font {
+    font-family: 'Quicksand', sans-serif;
+  }
 
 .myanmar-font{
     font-family:"myanmar-khyay-regular", sans-serif;
