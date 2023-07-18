@@ -4,13 +4,13 @@
         <div class="col-md-4 footer-block">
           <h4 class="mallana-font">USEFUL LINKS</h4>
           <ul>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Featured On</a></li>
-            <li><a href="#">Delivery Information</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">My Account</a></li>
-          </ul>          
+            <li><a href="#" class="text-decoration-none text-black">Contact Us</a></li>
+            <li><a href="#" class="text-decoration-none text-black">Featured On</a></li>
+            <li><a href="#" class="text-decoration-none text-black">Delivery Information</a></li>
+            <li><a href="#" class="text-decoration-none text-black">Terms & Conditions</a></li>
+            <li><a href="#" class="text-decoration-none text-black">Privacy Policy</a></li>
+            <li><a href="#" class="text-decoration-none text-black">My Account</a></li>
+          </ul>                  
         </div>
         <div class="col-md-4 footer-block">
           <h4 class="mallana-font">CONTACT US</h4>
