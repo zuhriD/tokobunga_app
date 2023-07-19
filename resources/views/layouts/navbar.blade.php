@@ -13,13 +13,13 @@
             </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="{{ route('homeUser') }}">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
+            <a class="nav-link" href="{{ route('aboutUs') }}">About Us</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Our Brands</a>
+            <a class="nav-link" href="{{ route('ourbrand') }}">Our Brands</a>
         </li>
     </ul>
 </div>

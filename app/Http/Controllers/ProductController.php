@@ -22,6 +22,11 @@ class ProductController extends Controller
         return response()->json($product);
     }
 
+    public function show_product(Product $product)
+    {
+        return view('page.detail_produk', compact('product'));
+    }
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
