@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function show_profile()
+    {
+        $user = Auth::user();
+        return view('page.profile', compact('user'));
+    }
+
     public function store(Request $request)
     {
         $validasiData = request()->validate([

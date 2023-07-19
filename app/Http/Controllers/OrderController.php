@@ -26,6 +26,16 @@ class OrderController extends Controller
         return response()->json($order);
     }
 
+    public function show_history()
+    {
+        $user = Auth::user();
+        $orders = Order::where('user_id', $user->id)->get();
+        $products = Product::all();
+        $users = User::where('role_id', 2)->get();
+        $categories = Category::all();
+        return view('page.history', compact('orders', 'products', 'users', 'categories'));
+    }
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([

@@ -21,16 +21,19 @@ Route::middleware('guest')->group(function () {
 Route::get('/register', [App\Http\Controllers\Auth\AuthController::class, 'index_register'])->name('register');
 Route::post('/register', [App\Http\Controllers\Auth\AuthController::class, 'register'])->name('auths.register');
 
+Route::resource('users', App\Http\Controllers\UserController::class);
+Route::resource('orders', App\Http\Controllers\OrderController::class);
+Route::get('/profile', [App\Http\Controllers\UserController::class, 'show_profile'])->name('profile');
+Route::get('/history', [App\Http\Controllers\OrderController::class, 'show_history'])->name('history');
+
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboardAdmin');
-    Route::resource('users', App\Http\Controllers\UserController::class);
     Route::resource('categories', App\Http\Controllers\CategoryController::class);
     Route::resource('products', App\Http\Controllers\ProductController::class);
-    Route::resource('orders', App\Http\Controllers\OrderController::class);
     Route::post('/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('auths.logout');
 });
 
 Route::group(['middleware' => ['auth', 'user']], function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('homeUser');
-    Route::post('/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('auths.logout');
+    Route::get('/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('auths.logout');
 });
