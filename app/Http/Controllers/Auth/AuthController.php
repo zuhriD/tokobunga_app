@@ -28,12 +28,17 @@ class AuthController extends Controller
             'role_id' => 'required|integer'
         ]);
 
-        $credentials['password'] = bcrypt($request->password);
+        try {
+            $credentials['password'] = bcrypt($request->password);
 
-        User::create($credentials);
+            User::create($credentials);
 
-        return redirect('/login')->with('success', 'Register success!');
+            return redirect('/login')->with('success', 'Register success!');
+        } catch (\Exception $e) {
+            return redirect()->back()->withInput()->withErrors(['error' => 'Registration failed. Please try again later.']);
+        }
     }
+
 
     public function login(Request $request)
     {
