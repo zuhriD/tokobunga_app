@@ -7,6 +7,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                @if (session('error'))
+                    <div class="col-sm-12 mt-2">
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            {{ session('error') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                @endif
                 <div class="login-box p-4">
                     <div class="row">
                         <div class="col-md-6 d-flex align-items-center justify-content-center">
@@ -23,7 +33,8 @@
                                         placeholder="Username or Email Address*">
                                 </div>
                                 <div class="mb-3">
-                                    <input type="password" class="form-control" id="password" name="password" placeholder="Password *">
+                                    <input type="password" class="form-control" id="password" name="password"
+                                        placeholder="Password *">
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                     <div class="form-check">
