@@ -20,6 +20,14 @@ class OrderController extends Controller
         return view('dashboard.order.index', compact('orders', 'products', 'users', 'categories'));
     }
 
+    public function create_order(Product $product)
+    {
+        $products = Product::all();
+        $users = Auth::user();
+        $categories = Category::all();
+        return view('page.checkout', compact('product', 'products', 'users', 'categories'));
+    }
+
     public function show($id)
     {
         $order = Order::findOrFail($id); // Query ke database untuk mengambil data sesuai id

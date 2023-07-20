@@ -21,9 +21,11 @@
                     </p>
                 </div>
                 <div class="text-center">
-                    <button class="btn btn-primary mt-4 bg-black px-5 jacques-font"
-                        style="padding: 15px;border-radius: 30px;font-size: 16px;border-color: black;box-shadow:0 2px 4px rgba(0, 0, 0, 0.2); ">Beli
-                        Sekarang</button>
+                    <form action="{{ route('create_order', $product) }}" method="get">
+                        <button class="btn btn-primary mt-4 bg-black px-5 jacques-font"
+                            style="padding: 15px;border-radius: 30px;font-size: 16px;border-color: black;box-shadow:0 2px 4px rgba(0, 0, 0, 0.2); ">Beli
+                            Sekarang</button>
+                    </form>
                 </div>
             </div>
         </div>
