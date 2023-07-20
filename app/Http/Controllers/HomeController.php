@@ -31,7 +31,7 @@ class HomeController extends Controller
 
     public function fresh_flowers()
     {
-        $products = Product::where('category_id', 3)->get();
+        $products = Product::where('category_id', 2)->get();
         return view('page.produk.fresh_flowers', compact('products'));
     }
 
