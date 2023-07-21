@@ -22,10 +22,26 @@ class OrderController extends Controller
 
     public function create_order(Product $product)
     {
-        $products = Product::all();
-        $users = Auth::user();
-        $categories = Category::all();
-        return view('page.checkout', compact('product', 'products', 'users', 'categories'));
+        $product = Product::findOrFail($product->id);
+        $user = Auth::user();
+        return view('page.form_pembelian', compact('product', 'user'));
+    }
+
+    public function store_order(Request $request)
+    {
+        $validatedData = $request->validate([
+            'user_id' => 'required',
+            'product_id' => 'required',
+            'category_id' => 'required',
+            'quantity' => 'required',
+            'price' => 'required',
+            'address' => 'required',
+            'send_method' => 'required',
+        ]);
+
+        $order = Order::create($validatedData);
+
+        return redirect()->route('homeUser')->with('success', 'Order created successfully.');
     }
 
     public function show($id)

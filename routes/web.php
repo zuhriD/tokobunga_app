@@ -46,5 +46,6 @@ Route::group(['middleware' => ['auth', 'user']], function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('homeUser');
     Route::get('/product/{product}', [App\Http\Controllers\ProductController::class, 'show_product'])->name('show_product');
     Route::get('/checkout/{product}', [App\Http\Controllers\OrderController::class, 'create_order'])->name('create_order');
+    Route::post('/checkout', [App\Http\Controllers\OrderController::class, 'store_order'])->name('store_order');
     Route::get('/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('auths.logout');
 });

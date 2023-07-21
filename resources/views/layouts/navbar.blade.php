@@ -9,9 +9,11 @@
                 My Profile
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href=""><i class="fas fa-user"></i> Profile</a></li>
-                <li><a class="dropdown-item" href="{{ route('history') }}"><i class="fas fa-history"></i> History</a></li>
-                <li><a class="dropdown-item" href="{{ route('auths.logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                <li><a class="dropdown-item" href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a class="dropdown-item" href="{{ route('history') }}"><i class="fas fa-history"></i> History</a>
+                </li>
+                <li><a class="dropdown-item" href="{{ route('auths.logout') }}"><i class="fas fa-sign-out-alt"></i>
+                        Logout</a></li>
             </ul>
         </li>
         <li class="nav-item">
