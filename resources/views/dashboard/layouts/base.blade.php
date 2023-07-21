@@ -82,8 +82,6 @@
 <script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 <!-- PAGE PLUGINS -->
-{{-- style.js --}}
-<script src="{{  asset('js/style.js')}}"></script>
 <script>
      $(function () {
 

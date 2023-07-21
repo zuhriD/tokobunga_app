@@ -101,7 +101,7 @@
                         </div>  
                         <div class="col-md-12">
                         <div class="form-group">
-                            <label for="image">Banner</label>
+                            <label for="banner">Banner</label>
                             <input type="file" class="form-control form-control-solid" id="banner" name="banner">
                         </div>
                         </div>  
@@ -136,14 +136,18 @@
                                     name="name" required>
                             </div>
                         </div>
+                        <div class="col-md-12">
                         <div class="form-group">
                             <label for="image">Gambar</label>
                             <input type="file" class="form-control form-control-solid" id="image" name="image">
                         </div>
+                        </div>  
+                        <div class="col-md-12">
                         <div class="form-group">
                             <label for="image">Banner</label>
                             <input type="file" class="form-control form-control-solid" id="banner" name="banner">
                         </div>
+                        </div>  
                         <div class="col-md-12 text-right">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>

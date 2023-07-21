@@ -10,6 +10,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   {{-- call css from public folder --}}
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <script src="{{ asset('js/code.jquery.com_jquery-3.6.0.min.js') }}"></script>
+    <!-- Add this to the head section of your HTML -->
+
+
 </head>
 <body>
 
