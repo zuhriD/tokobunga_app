@@ -5,11 +5,11 @@
 @endsection
 
 @section('content')
-    <img src="{{ asset('assets/img/' .$category->banner) }}" alt="Banner Image" class="img-fluid mb-5" style="margin-top: 200px">
+    <img src="{{ asset('assets/img/' . $category->banner) }}" alt="Banner Image" class="img-fluid mb-5" style="margin-top: 200px">
     <div class="container mb-5">
         <div class="row justify-content-center">
             <div class="row">
-                @foreach ($products as $product)
+                @foreach ($category->products as $product)
                     <div class="col-md-6 text-center">
                         <a href="{{ route('show_product', $product) }}" class="text-decoration-none text-black">
                             <img src="{{ asset('assets/img/' . $product->image) }}" alt="Produk Image" class="img-fluid"

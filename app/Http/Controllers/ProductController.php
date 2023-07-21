@@ -37,7 +37,7 @@ class ProductController extends Controller
             'category_id' => 'required',
         ]);
 
-        $validatedData['image'] = time() . ".png";
+        $validatedData['image'] = time() . '_' . $request->input('name') . ".png";
         $request->file('image')->move(public_path('assets/img'), $validatedData['image']);
         $product = Product::create($validatedData);
 
@@ -60,7 +60,7 @@ class ProductController extends Controller
         unlink($img_path); // Delete image
     }
 
-    $validatedData['image'] = time() . ".png";
+    $validatedData['image'] = time() . '_' . $request->input('name') . ".png";
     $request->file('image')->move(public_path('assets/img'), $validatedData['image']);
 
     $product->update($validatedData);
