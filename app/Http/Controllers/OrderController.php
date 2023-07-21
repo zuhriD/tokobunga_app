@@ -52,12 +52,9 @@ class OrderController extends Controller
 
     public function show_history()
     {
-        $user = Auth::user();
-        $orders = Order::where('user_id', $user->id)->get();
-        $products = Product::all();
-        $users = User::where('role_id', 2)->get();
-        $categories = Category::all();
-        return view('page.history', compact('orders', 'products', 'users', 'categories'));
+        $history = Order::with('user','product','category')->where('user_id', Auth::user()->id)->get();
+        $total = Order::where('user_id', Auth::user()->id)->sum('price');
+        return view('page.history', compact('history', 'total'));
     }
 
     public function store(Request $request)

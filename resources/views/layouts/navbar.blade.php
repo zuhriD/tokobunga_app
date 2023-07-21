@@ -4,7 +4,7 @@
     </div>
     <ul class="nav nav-pills justify-content-center">
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="{{ route('profile') }}" id="navbarDropdown" role="button"
+            <a class="nav-link dropdown-toggle" href="{{ route('profile') }}" id="navbarDropdown" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">
                 My Profile
             </a>
@@ -17,13 +17,16 @@
             </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('homeUser') }}">Home</a>
+            <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" aria-current="page"
+                href="{{ route('homeUser') }}">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('aboutUs') }}">About Us</a>
+            <a class="nav-link {{ request()->is('aboutUs') ? 'active' : '' }}" href="{{ route('aboutUs') }}">About
+                Us</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('ourbrand') }}">Our Brands</a>
+            <a class="nav-link {{ request()->is('ourBrand') ? 'active' : '' }}" href="{{ route('ourbrand') }}">Our
+                Brand</a>
         </li>
     </ul>
 </div>

@@ -14,26 +14,33 @@
         </div>
         <div class="body-section" style="background-color: #FFF6F6; padding: 20px;border: 1px solid #FECECE;">
             <div class="container">
-                @foreach ($orders as $order)
-                    <div class="row align-items-center mt-3">
-                        <div class="col-md-2">
-                            <img src="/assets/img/{{ $order->product->image }}" alt="Product Image" class="img-fluid">
-                        </div>
-                        <div class="col-md-2">
-                            <div>
-                                <h3 class="mb-3 jacques-font">{{ $order->product->name }}</h3>
-                                <p style="font-family: 'Quicksand', sans-serif;font-weight: 400;">Kategori:
-                                    {{ $order->category->name }}</p>
-                                <p style="font-family: 'Quicksand', sans-serif;font-weight: 400;">x{{ $order->quantity }}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-8 mb-3">
-                            <p class="text-end font-weight-bold" style="font-family: 'stfangsong-regular', sans-serif;">Rp
-                                {{ $order->price }}</p>
+                @if ($history->isEmpty())
+                    <div class="text-center">
+                        <h1 class="jacques-font" style="font-size: 20px;color: grey;">Belum ada pembelian</h1>
+                    </div>
+                @else
+                @foreach ($history as $order)
+                <div class="row align-items-center mt-3">
+                    <div class="col-md-2">
+                        <img src="/assets/img/{{ $order->product->image }}" alt="Product Image" class="img-fluid">
+                    </div>
+                    <div class="col-md-2">
+                        <div>
+                            <h3 class="mb-3 jacques-font">{{ $order->product->name }}</h3>
+                            <p style="font-family: 'Quicksand', sans-serif;font-weight: 400;">Kategori:
+                                {{ $order->category->name }}</p>
+                            <p style="font-family: 'Quicksand', sans-serif;font-weight: 400;">x{{ $order->quantity }}
+                            </p>
                         </div>
                     </div>
-                @endforeach
+                    <div class="col-md-8 mb-3">
+                        <p class="text-end font-weight-bold" style="font-family: 'stfangsong-regular', sans-serif;">Rp
+                            {{ $order->price }}</p>
+                    </div>
+                </div>
+            @endforeach
+                @endif
+                
             </div>
 
         </div>
@@ -41,7 +48,11 @@
     </div>
     <div class="text-end mt-4 pr-4">
         <p style="font-family: 'Quicksand', sans-serif;font-weight: 400;margin-right:20px;font-size:24px;">Total Harga:
-            <span style="color:#FECECE;font-weight: bold;">Rp 450.000</span>
+            @if ($total == 0)
+                Rp 0
+            @else
+                Rp {{ number_format($total, 0, ',', '.') }}
+            @endif
         </p>
     </div>
 
