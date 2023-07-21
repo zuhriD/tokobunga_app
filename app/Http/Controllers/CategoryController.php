@@ -25,8 +25,14 @@ class CategoryController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|unique:categories|max:255',
+            'image' => 'required|image',
+            'banner' => 'required|image',
         ]);
+        $validatedData['image'] = time() . '_' . $request->input('name') . "imgkategori.png";
+        $request->file('image')->move(public_path('assets/img'), $validatedData['image']);
 
+        $validatedData['banner'] = time() . '_' . $request->input('name') . "bannerkategori.png";
+        $request->file('banner')->move(public_path('assets/img'), $validatedData['banner']);
         $category = Category::create($validatedData);
 
         return redirect()->route('categories.index')->with('success', 'Category created successfully.');
@@ -36,7 +42,15 @@ class CategoryController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|unique:categories|max:255',
+            'image' => 'required|image',
+            'banner' => 'required|image',
         ]);
+
+        $validatedData['image'] = time() . '_' . $request->input('name') . "imgkategori.png";
+        $request->file('image')->move(public_path('assets/img'), $validatedData['image']);
+
+        $validatedData['banner'] = time() . '_' . $request->input('name') . "bannerkategori.png";
+        $request->file('banner')->move(public_path('assets/img'), $validatedData['banner']);
 
         $category->update($validatedData);
 

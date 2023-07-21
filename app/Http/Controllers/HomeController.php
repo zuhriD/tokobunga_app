@@ -20,42 +20,14 @@ class HomeController extends Controller
 
     public function ourbrand()
     {
-        return view('page.ourbrand');
+        $category = Category::all();
+        return view('page.ourbrand', compact('category'));
     }
 
-    public function flowers_box()
+    public function showBrand(Category $category)
     {
-        $products = Product::where('category_id', 1)->get();
-        return view('page.produk.flowers_box', compact('products'));
-    }
-
-    public function fresh_flowers()
-    {
-        $products = Product::where('category_id', 2)->get();
-        return view('page.produk.fresh_flowers', compact('products'));
-    }
-
-    public function artificial_flowers()
-    {
-        $products = Product::where('category_id', 3)->get();
-        return view('page.produk.artificial_flowers', compact('products'));
-    }
-
-    public function hand_bouquet()
-    {
-        $products = Product::where('category_id', 4)->get();
-        return view('page.produk.hand_bouquet', compact('products'));
-    }
-
-    public function standing_flowers()
-    {
-        $products = Product::where('category_id', 5)->get();
-        return view('page.produk.standing_flowers', compact('products'));
-    }
-
-    public function gift_hampers()
-    {
-        $products = Product::where('category_id', 6)->get();
-        return view('page.produk.gift_hampers', compact('Products'));
+        $category = Category::where('id', $category->id)->first();
+        $products = Product::where('category_id', $category->id)->get();
+        return view('page.list_produk', compact('category', 'products'));
     }
 }

@@ -25,91 +25,27 @@
         <h3 class="text-center montserrat-font" style="font-size: 36px;font-weight: 700;">Katalog Produk</h3>
         <hr style="opacity: 100%;">
         <div class="row mt-4 mb-5">
-            <div class="col-md-6">
-                <div class="product-box" style="cursor: pointer;">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 text-center">
-                            <img src="{{ asset('assets/ourbrand/3.jpg') }}" alt="Product Image" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 ">
-                            <h5 class="text-start myanmar-font" style="font-weight: bold;font-size: 30px;"><a
-                                    href="{{ route('flowers_box') }}" style="text-decoration: none;color: black">Flowers
-                                    Box</a></h5>
+            @if ($category->isEmpty())
+                <div class="text-center">
+                    <h1 class="jacques-font" style="font-size: 20px;color: grey;">Belum ada produk</h1>
+                </div>
+            @else
+                @foreach ($category as $item)
+                <div class="col-md-6">
+                    <div class="product-box" style="cursor: pointer;">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 text-center">
+                                <img src="{{ asset('assets/img/' .$item->image) }}" alt="Product Image" class="img-fluid">
+                            </div>
+                            <div class="col-md-6 ">
+                                <h5 class="text-start myanmar-font" style="font-weight: bold;font-size: 30px;"><a
+                                        href="{{ route('ourbrand', $item->id) }}" class="text-decoration-none text-black">{{ $item->name }}</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="product-box" style="cursor: pointer;">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 text-center">
-                            <img src="{{ asset('assets/ourbrand/4.jpg') }}" alt="Product Image" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 ">
-                            <h5 class="text-start myanmar-font" style="font-weight: bold;font-size: 30px;"><a
-                                    href="{{ route('fresh_flowers') }}" style="text-decoration: none;color: black">Fresh
-                                    Flowers
-                                </a></h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mt-3">
-                <div class="product-box" style="cursor: pointer;">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 text-center">
-                            <img src="{{ asset('assets/ourbrand/5.jpeg') }}" alt="Product Image" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 ">
-                            <h5 class="text-start myanmar-font" style="font-weight: bold;font-size: 30px;"><a
-                                    href="{{ route('artificial_flowers') }}"
-                                    style="text-decoration: none;color: black">Artificial Flowers</a></h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mt-3">
-                <div class="product-box" style="cursor: pointer;">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 text-center">
-                            <img src="{{ asset('assets/ourbrand/6.jpg') }}" alt="Product Image" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 ">
-                            <h5 class="text-start myanmar-font" style="font-weight: bold;font-size: 30px;"><a
-                                    href="{{ route('hand_bouquet') }}"
-                                    style="text-decoration: none;color: black">Hand Bouquet</a></h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mt-3">
-                <div class="product-box" style="cursor: pointer;">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 text-center">
-                            <img src="{{ asset('assets/ourbrand/7.jpeg') }}" alt="Product Image" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 ">
-                            <h5 class="text-start myanmar-font" style="font-weight: bold;font-size: 30px;"><a
-                                href="{{ route('standing_flowers') }}"
-                                style="text-decoration: none;color: black">Standing Flowers</a></h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mt-3">
-                <div class="product-box" style="cursor: pointer;">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 text-center">
-                            <img src="{{ asset('assets/ourbrand/8.jpg') }}" alt="Product Image" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 ">
-                            <h5 class="text-start myanmar-font" style="font-weight: bold;font-size: 30px;"><a
-                                href="{{ route('gift_hampers') }}"
-                                style="text-decoration: none;color: black">Gift & Hampers</a></h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                @endforeach
+            @endif
         </div>
     </div>
     <h3 class="text-center josefin-font" style="color:#6D6C6C;font-weight: 400;">@FLORAMOR</h3>

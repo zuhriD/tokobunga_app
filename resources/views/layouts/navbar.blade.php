@@ -4,8 +4,7 @@
     </div>
     <ul class="nav nav-pills justify-content-center">
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="{{ route('profile') }}" id="navbarDropdown" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle  {{ request()->is('profile') ? 'active' :  '' }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 My Profile
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

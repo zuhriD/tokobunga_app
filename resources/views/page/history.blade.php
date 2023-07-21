@@ -57,11 +57,11 @@
     </div>
 
     <div class="text-end mt-4 pr-4">
-        <button class="btn btn-primary mr-3 jacques-font"
-            style="background-color: #FFFFFF; border-color: #FECECE; color: black;font-size: 20px;">Beli Lagi</button>
-        <button class="btn btn-primary jacques-font"
+        <a href='{{ route('ourbrand') }}' class="btn btn-primary mr-3 jacques-font"
+            style="background-color: #FFFFFF; border-color: #FECECE; color: black;font-size: 20px;">Beli Lagi</a>
+        <a href='{{ route('homeUser') }}' class="btn btn-primary jacques-font"
             style="background-color: #FECECE; border-color: #FFFFFF; color: black;font-size: 20px;margin-right:20px;">Kunjungi
-            Toko</button>
+            Toko</a>
     </div>
     <h3 class="text-center josefin-font" style="color:#6D6C6C;font-weight: 400;">@FLORAMOR</h3>
 @endsection

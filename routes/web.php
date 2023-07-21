@@ -28,12 +28,8 @@ Route::get('/history', [App\Http\Controllers\OrderController::class, 'show_histo
 
 Route::get('/aboutUs', [App\Http\Controllers\HomeController::class, 'about'])->name('aboutUs');
 Route::get('/ourBrand', [App\Http\Controllers\HomeController::class, 'ourbrand'])->name('ourbrand');
-Route::get('/ourBrand/flowers_box', [App\Http\Controllers\HomeController::class, 'flowers_box'])->name('flowers_box');
-Route::get('/ourBrand/fresh_flowers', [App\Http\Controllers\HomeController::class, 'fresh_flowers'])->name('fresh_flowers');
-Route::get('/ourBrand/artificial_flowers', [App\Http\Controllers\HomeController::class, 'artificial_flowers'])->name('artificial_flowers');
-Route::get('/ourBrand/hand_bouquet', [App\Http\Controllers\HomeController::class, 'hand_bouquet'])->name('hand_bouquet');
-Route::get('/ourBrand/standing_flowers', [App\Http\Controllers\HomeController::class, 'standing_flowers'])->name('standing_flowers');
-Route::get('/ourBrand/gift_hampers', [App\Http\Controllers\HomeController::class, 'gift_hampers'])->name('gift_hampers');
+Route::get('/ourBrand/{category}', [App\Http\Controllers\HomeController::class, 'show_brand'])->name('show_brand');
+
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboardAdmin');

@@ -40,6 +40,7 @@
                         <tr>
                             <th>ID Kategori Produk</th>
                             <th>Kategori Produk</th>
+                            <th>Image</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -48,6 +49,8 @@
                             <tr>
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->name }}</td>
+                                {{-- image --}}
+                                <td><img src="{{ asset('assets/img/' . $item->image) }}" alt="image" width="100px"></td>
                                 <td>
                                     <a href="#" class="btn btn-warning" data-toggle="modal"
                                         data-target="#editUserModal" data-id="{{ $item->id }}">
@@ -81,7 +84,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('categories.store') }}" method="POST" class="row">
+                    <form action="{{ route('categories.store') }}" method="POST" class="row" enctype="multipart/form-data">
                         @csrf
                         <div class="col-md-12">
                             <div class="form-group">
@@ -90,6 +93,18 @@
                                     name="name" required>
                             </div>
                         </div>
+                        <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="image">Gambar</label>
+                            <input type="file" class="form-control form-control-solid" id="image" name="image">
+                        </div>
+                        </div>  
+                        <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="image">Banner</label>
+                            <input type="file" class="form-control form-control-solid" id="banner" name="banner">
+                        </div>
+                        </div>  
                         <div class="col-md-12 text-right">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
@@ -111,7 +126,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="POST" class="row" id="editForm">
+                    <form action="" method="POST" class="row" id="editForm" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="col-md-12">
@@ -120,6 +135,14 @@
                                 <input type="text" class="form-control" id="nameEdit"
                                     name="name" required>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Gambar</label>
+                            <input type="file" class="form-control form-control-solid" id="image" name="image">
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Banner</label>
+                            <input type="file" class="form-control form-control-solid" id="banner" name="banner">
                         </div>
                         <div class="col-md-12 text-right">
                             <button type="submit" class="btn btn-primary">Submit</button>
