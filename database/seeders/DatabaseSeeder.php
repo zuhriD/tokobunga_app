@@ -40,37 +40,37 @@ class DatabaseSeeder extends Seeder
 
         Category::create([
             'name' => 'Flowers Box',
-            'image' => 'box.png',
+            'image' => 'box.jpg',
             'banner' => '1.png',
         ]);
 
         Category::create([
             'name' => 'Fresh Flowers',
-            'image' => 'fresh.png',
+            'image' => 'fresh.jpg',
             'banner' => '3.png',
         ]);
 
         Category::create([
             'name' => 'Artificial Flowers',
-            'image' => 'arti.png',
+            'image' => 'arti.jpeg',
             'banner' => '4.png',
         ]);
 
         Category::create([
             'name' => 'Hand Bouquet',
-            'image' => 'hand.png',
+            'image' => 'hand.jpg',
             'banner' => '2.png',
         ]);
 
         Category::create([
             'name' => 'Standing Flowers',
-            'image' => 'standing.png',
+            'image' => 'standing.jpeg',
             'banner' => '6.png',
         ]);
 
         Category::create([
             'name' => 'Gift & Hampers',
-            'image' => 'gift.png',
+            'image' => 'gift.jpg',
             'banner' => '5.png',
         ]);
 
