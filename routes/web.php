@@ -28,7 +28,7 @@ Route::get('/history', [App\Http\Controllers\OrderController::class, 'show_histo
 
 Route::get('/aboutUs', [App\Http\Controllers\HomeController::class, 'about'])->name('aboutUs');
 Route::get('/ourBrand', [App\Http\Controllers\HomeController::class, 'ourbrand'])->name('ourbrand');
-Route::get('/ourBrand/{category}', [App\Http\Controllers\HomeController::class, 'show_brand'])->name('show_brand');
+Route::get('/ourBrand/{id}', [App\Http\Controllers\HomeController::class, 'show_brand'])->name('show_brand');
 
 
 Route::group(['middleware' => ['auth', 'admin']], function () {

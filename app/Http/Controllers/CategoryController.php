@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Termwind\Components\Dd;
 
 class CategoryController extends Controller
 {
@@ -40,16 +41,17 @@ class CategoryController extends Controller
 
     public function update(Request $request, Category $category)
     {
+       
         $validatedData = $request->validate([
-            'name' => 'required|unique:categories|max:255',
+            'name' => 'required|max:255',
             'image' => 'required|image',
             'banner' => 'required|image',
         ]);
 
-        $validatedData['image'] = time() . '_' . $request->input('name') . "imgkategori.png";
+        $validatedData['image'] = time() . '_' . $request->input('name') . "imgkategorinew.png";
         $request->file('image')->move(public_path('assets/img'), $validatedData['image']);
 
-        $validatedData['banner'] = time() . '_' . $request->input('name') . "bannerkategori.png";
+        $validatedData['banner'] = time() . '_' . $request->input('name') . "bannerkategorinew.png";
         $request->file('banner')->move(public_path('assets/img'), $validatedData['banner']);
 
         $category->update($validatedData);

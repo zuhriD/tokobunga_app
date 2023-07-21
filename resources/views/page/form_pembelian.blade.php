@@ -35,12 +35,13 @@
                             <label for="kategori" class="form-label raleway-font">Kategori Produk*</label>
                             <input type="text" class="form-control" value="{{ $product->category->name }}">
                             <input type="hidden" class="d-none" name="category_id" value="{{ $product->category->id }}">
+                            <input type="hidden"  name="harga" id="harga" value="{{ $product->price }}">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="mb-4">
                             <label for="quantity" class="form-label raleway-font">Jumlah*</label>
-                            <input type="text" class="form-control" id="quantity" name="quantity">
+                            <input type="text" class="form-control" id="quantity" name="quantity" onkeyup="get_total()">
                         </div>
                     </div>
                 </div>
@@ -65,4 +66,5 @@
             </form>
         </div>
     </div>
+    <script src="{{ asset('js/formpembelian.js') }}"></script>
 @endsection
