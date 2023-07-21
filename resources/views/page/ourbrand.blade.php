@@ -39,7 +39,7 @@
                             </div>
                             <div class="col-md-6 ">
                                 <h5 class="text-start myanmar-font" style="font-weight: bold;font-size: 30px;"><a
-                                        href="{{ route('ourbrand', $item->id) }}" class="text-decoration-none text-black">{{ $item->name }}</a>
+                                        href="{{ route('show_brand', $item->id) }}" class="text-decoration-none text-black">{{ $item->name }}</a>
                             </div>
                         </div>
                     </div>

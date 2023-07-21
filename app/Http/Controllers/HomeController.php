@@ -26,8 +26,7 @@ class HomeController extends Controller
 
     public function showBrand(Category $category)
     {
-        $category = Category::where('id', $category->id)->first();
         $products = Product::where('category_id', $category->id)->get();
-        return view('page.list_produk', compact('category', 'products'));
+        return view('page.list_produk', compact('products'));
     }
 }
