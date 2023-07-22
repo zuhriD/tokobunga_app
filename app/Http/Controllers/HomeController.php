@@ -28,6 +28,6 @@ class HomeController extends Controller
     {
         $category = Category::where('id', $id)->first();
         $products = Product::where('category_id', $category->id)->get();
-        return view('page.list_produk', compact('products'));
+        return view('page.list_produk', compact('products', 'category'));
     }
 }
