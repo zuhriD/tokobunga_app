@@ -31,7 +31,7 @@
                 </div>
             @else
                 @foreach ($category as $item)
-                <div class="col-md-6">
+                <div class="col-md-6 mb-3">
                     <div class="product-box" style="cursor: pointer;">
                         <div class="row align-items-center">
                             <div class="col-md-6 text-center">
