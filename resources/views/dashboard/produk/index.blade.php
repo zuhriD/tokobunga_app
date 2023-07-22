@@ -55,7 +55,8 @@
                                 <td>{{ $item->price }}</td>
                                 <td>{{ $item->description }}</td>
                                 <td>
-                                    <img src="/assets/img/{{ $item->image }}" class="h-30 align-self-center of-cover" alt="" width="150px">
+                                    <img src="/assets/img/{{ $item->image }}" class="h-30 align-self-center of-cover"
+                                        alt="" width="150px">
                                 </td>
                                 <td>{{ $item->category->name }}</td>
                                 <td>
@@ -110,7 +111,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="image">Gambar</label>
-                                <input type="file" class="form-control form-control-solid" id="image" name="image">
+                                <input type="file" class="form-control form-control-solid" id="imageAdd" name="image">
+                                <img id="imageAdd-preview" src="" alt="Preview"
+                                    style="max-width: 100%; max-height: 200px;">
                             </div>
                             <div class="form-group">
                                 <label for="category_id">Kategori</label>
@@ -161,8 +164,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="image">Gambar</label>
-                                <input type="file" class="form-control form-control-solid" id="image"
+                                <input type="file" class="form-control form-control-solid" id="imageEdit"
                                     name="image">
+                                <img id="image-preview" src="" alt="Preview"
+                                    style="max-width: 100%; max-height: 200px;">
                             </div>
                             <div class="form-group">
                                 <label for="category_id">Kategori</label>

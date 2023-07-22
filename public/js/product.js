@@ -17,3 +17,36 @@ $('document').ready(function () {
         form.action = '/products/' + id;
     });
 });
+
+function previewImage(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#imageAdd-preview').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+// Panggil fungsi previewImage() saat ada perubahan pada input file
+$('#imageAdd').change(function () {
+    previewImage(this);
+});
+
+function previewEditImage(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#image-preview').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$('#imageEdit').change(function () {
+    previewEditImage(this);
+});

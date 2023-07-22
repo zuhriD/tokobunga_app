@@ -41,6 +41,7 @@
                             <th>ID Kategori Produk</th>
                             <th>Kategori Produk</th>
                             <th>Image</th>
+                            <th>Banner</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -51,6 +52,9 @@
                                 <td>{{ $item->name }}</td>
                                 {{-- image --}}
                                 <td><img src="{{ asset('assets/img/' . $item->image) }}" alt="image" width="100px"></td>
+                                {{-- banner --}}
+                                <td><img src="{{ asset('assets/img/' . $item->banner) }}" alt="banner" width="100px">
+                                </td>
                                 <td>
                                     <a href="#" class="btn btn-warning" data-toggle="modal"
                                         data-target="#editUserModal" data-id="{{ $item->id }}">
@@ -84,27 +88,31 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('categories.store') }}" method="POST" class="row" enctype="multipart/form-data">
+                    <form action="{{ route('categories.store') }}" method="POST" class="row"
+                        enctype="multipart/form-data">
                         @csrf
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name"
-                                    name="name" required>
+                                <input type="text" class="form-control" id="name" name="name" required>
                             </div>
                         </div>
                         <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="image">Gambar</label>
-                            <input type="file" class="form-control form-control-solid" id="image" name="image">
+                            <div class="form-group">
+                                <label for="image">Gambar</label>
+                                <input type="file" class="form-control form-control-solid" id="imageAdd" name="image">
+                                <img id="imageAdd-preview" src="" alt="Preview"
+                                    style="max-width: 100%; max-height: 200px;">
+                            </div>
                         </div>
-                        </div>  
                         <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="banner">Banner</label>
-                            <input type="file" class="form-control form-control-solid" id="banner" name="banner">
+                            <div class="form-group">
+                                <label for="banner">Banner</label>
+                                <input type="file" class="form-control form-control-solid" id="bannerAdd" name="banner">
+                                <img id="bannerAdd-preview" src="" alt="Preview"
+                                    style="max-width: 100%; max-height: 200px;">
+                            </div>
                         </div>
-                        </div>  
                         <div class="col-md-12 text-right">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
@@ -132,22 +140,27 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" class="form-control" id="nameEdit"
-                                    name="name" required>
+                                <input type="text" class="form-control" id="nameEdit" name="name" required>
                             </div>
                         </div>
                         <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="image">Gambar</label>
-                            <input type="file" class="form-control form-control-solid" id="image" name="image">
+                            <div class="form-group">
+                                <label for="image">Gambar</label>
+                                <input type="file" class="form-control form-control-solid" id="imageEdit"
+                                    name="image">
+                                <img id="image-preview" src="" alt="Preview"
+                                    style="max-width: 100%; max-height: 200px;">
+                            </div>
                         </div>
-                        </div>  
                         <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="image">Banner</label>
-                            <input type="file" class="form-control form-control-solid" id="banner" name="banner">
+                            <div class="form-group">
+                                <label for="image">Banner</label>
+                                <input type="file" class="form-control form-control-solid" id="bannerEdit"
+                                    name="banner">
+                                <img id="banner-preview" src="" alt="Preview"
+                                    style="max-width: 100%; max-height: 200px;">
+                            </div>
                         </div>
-                        </div>  
                         <div class="col-md-12 text-right">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
