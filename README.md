@@ -1,6 +1,6 @@
 # Baca Sebelum RUN
 
-This is a Laravel project for ngebengkel.
+This is a Laravel project for tokobunga Flor Amor.
 
 ## Before Running
 
@@ -14,8 +14,12 @@ This is a Laravel project for ngebengkel.
 
 To login as an admin, use the following credentials:
 
-- Username: admin
+- Email: admin@admin.com'
 - Password: admin
+
+To login as an user, use the following credentials:
+- Email: user1@user.com'
+- Password: user
 
 ## About Laravel
 
