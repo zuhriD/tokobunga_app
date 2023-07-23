@@ -36,7 +36,7 @@
             @foreach ($productNew as $item)
                 <div class="col-md-3">
                     <img src="{{ asset('assets/img/' . $item->image) }}" alt="Product 1" class="img-fluid"
-                        style="font-family: 'Jacques Francois', sans-serif;">
+                        style="font-family: 'Jacques Francois', sans-serif;height: 400px;">
                     <p class="text-center">{{ $item->name }}</p>
                     <p class="text-center">Rp {{ number_format($item->price, 0, ',', '.') }}</p>
                 </div>
@@ -61,7 +61,7 @@
             @foreach ($productFF as $item)
                 <div class="col-md-3">
                     <img src="{{ asset('assets/img/' . $item->image) }}" alt="Product 1" class="img-fluid"
-                        style="font-family: 'Jacques Francois', sans-serif;">
+                        style="font-family: 'Jacques Francois', sans-serif;height: 500px;">
                     <p class="text-center">{{ $item->name }}</p>
                     <p class="text-center">Rp {{ number_format($item->price, 0, ',', '.') }}</p>
                 </div>
