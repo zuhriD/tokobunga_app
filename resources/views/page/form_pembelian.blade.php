@@ -7,7 +7,7 @@
 @section('content')
     <style>
         .background-image {
-            background-image: url('assets/form.png');
+            background-image: url('../assets/form.png'); 
             background-size: cover;
             background-position: center;
             min-height: 100vh;
@@ -25,7 +25,7 @@
                 @csrf
                 <div class="mb-4">
                     <label for="name" class="form-label raleway-font">Nama Produk*</label>
-                    <input type="text" class="form-control" value="{{ $product->name }}">
+                    <input type="text" class="form-control" value="{{ $product->name }}" readonly>
                     <input type="hidden" class="d-none" name="user_id" value="{{ $user->id }}">
                     <input type="hidden" class="d-none" name="product_id" value="{{ $product->id }}">
                 </div>
@@ -33,7 +33,7 @@
                     <div class="col-md-6">
                         <div class="mb-4">
                             <label for="kategori" class="form-label raleway-font">Kategori Produk*</label>
-                            <input type="text" class="form-control" value="{{ $product->category->name }}">
+                            <input type="text" class="form-control" value="{{ $product->category->name }}" readonly>
                             <input type="hidden" class="d-none" name="category_id" value="{{ $product->category->id }}">
                             <input type="hidden"  name="harga" id="harga" value="{{ $product->price }}">
                         </div>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="mb-4">
                     <label for="price" class="form-label raleway-font">Total Harga*</label>
-                    <input type="text" class="form-control" id="price" name="price">
+                    <input type="text" class="form-control" id="price" name="price" readonly>
                 </div>
                 <div class="mb-4">
                     <label for="address" class="form-label raleway-font">Alamat*</label>
