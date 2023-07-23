@@ -174,7 +174,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Clementine Clover',
             'price' => '150000',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-            'image' => 'Fresh Flower/1.jpg',
+            'image' => 'Fresh Flowers/1.jpg',
             'category_id' => 2,
         ]);
 
@@ -646,7 +646,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Rose Sakura Gift Box',
             'price' => '350000',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-            'image' => 'Gift & Hampers/rsgb.jpg',
+            'image' => 'Gift and Hampers/rsgb.jpg',
             'category_id' => 6,
         ]);
     }

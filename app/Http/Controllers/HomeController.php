@@ -10,7 +10,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('page.home');
+        $productNew = Product::orderBy('created_at', 'desc')->take(4)->get();
+        $productFF = Product::where('category_id', 2)->take(4)->get();
+        $productAF = Product::where('category_id', 3)->take(4)->get();
+        return view('page.home', compact('productNew', 'productFF', 'productAF'));
     }
 
     public function about()
