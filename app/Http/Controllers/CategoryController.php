@@ -44,19 +44,35 @@ class CategoryController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'image' => 'required|image',
-            'banner' => 'required|image',
+            'image' => 'nullable|image',
+            'banner' => 'nullable|image',
         ]);
 
-        // Delete previous image and banner files
-        File::delete(public_path('assets/img/') . $category->image);
-        File::delete(public_path('assets/img/') . $category->banner);
+        // Check if a new image is uploaded and update if necessary
+        if ($request->hasFile('image')) {
+            // Delete previous image file
+            File::delete(public_path('assets/img/') . $category->image);
 
-        $validatedData['image'] = time() . '_' . $request->input('name') . "imgkategorinew.png";
-        $request->file('image')->move(public_path('assets/img'), $validatedData['image']);
+            // Save the new image with a unique filename
+            $validatedData['image'] = time() . '_' . $request->input('name') . "imgkategorinew.png";
+            $request->file('image')->move(public_path('assets/img'), $validatedData['image']);
+        } else {
+            // No new image uploaded, retain the existing image filename
+            $validatedData['image'] = $category->image;
+        }
 
-        $validatedData['banner'] = time() . '_' . $request->input('name') . "bannerkategorinew.png";
-        $request->file('banner')->move(public_path('assets/img'), $validatedData['banner']);
+        // Check if a new banner is uploaded and update if necessary
+        if ($request->hasFile('banner')) {
+            // Delete previous banner file
+            File::delete(public_path('assets/img/') . $category->banner);
+
+            // Save the new banner with a unique filename
+            $validatedData['banner'] = time() . '_' . $request->input('name') . "bannerkategorinew.png";
+            $request->file('banner')->move(public_path('assets/img'), $validatedData['banner']);
+        } else {
+            // No new banner uploaded, retain the existing banner filename
+            $validatedData['banner'] = $category->banner;
+        }
 
         $category->update($validatedData);
 
