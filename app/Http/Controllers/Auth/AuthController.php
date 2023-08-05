@@ -50,7 +50,9 @@ class AuthController extends Controller
             'password' => $request->input('password')
         ];
 
-        if (Auth::attempt($credentials, $request->input('remember'))) {
+        $remember = $request->has('remember');
+
+        if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
 
             $user = Auth::user();
